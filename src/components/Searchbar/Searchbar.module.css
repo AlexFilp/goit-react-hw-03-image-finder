@@ -38,11 +38,12 @@
   width: 48px;
   height: 48px;
   border: 0;
-  background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
+  /* background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
   background-size: 40%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
   opacity: 0.6;
+  background-color: #fff;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   outline: none;
@@ -52,7 +53,12 @@
   opacity: 1;
 }
 
-.SearchFormButtonLabel {
+.SearchFormButton > svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* .SearchFormButtonLabel {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -62,7 +68,7 @@
   white-space: nowrap;
   clip-path: inset(50%);
   border: 0;
-}
+} */
 
 .SearchFormInput {
   display: inline-block;
