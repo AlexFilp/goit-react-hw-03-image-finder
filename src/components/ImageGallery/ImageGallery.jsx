@@ -50,7 +50,7 @@ export class ImageGallery extends Component {
             this.state.items.length + data.hits.length >= data.totalHits &&
             this.props.page !== 1
           ) {
-            toast.success(`Last ${data.hits.length} images :(`);
+            toast.warn(`Last ${data.hits.length} images :(`);
           }
 
           if (this.state.items.length + data.hits.length >= data.totalHits) {
