@@ -22,7 +22,6 @@ export class Modal extends Component {
     console.log(event.target);
     console.log(event.currentTarget);
     if (event.target === event.currentTarget) {
-      console.log('clicked overlay');
       this.props.onClose();
     }
   };

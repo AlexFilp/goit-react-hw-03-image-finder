@@ -3,24 +3,35 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
-import { Button } from './Button/Button';
 
 export class App extends Component {
   state = {
     query: '',
+    page: 1,
   };
 
   handleSearchSubmit = query => {
-    this.setState({ query });
+    this.setState({ query, page: 1 });
+  };
+
+  loadMore = () => {
+    this.setState(prevState => ({
+      page: prevState.page + 1,
+    }));
+    console.log(this.state.page);
   };
 
   render() {
     return (
       <div className="App">
         <Searchbar onSubmit={this.handleSearchSubmit} />
-        <ImageGallery query={this.state.query} />
-        <Button />
-        <ToastContainer position="top-right" autoClose={3000} limit={3} />
+        <ImageGallery
+          query={this.state.query}
+          page={this.state.page}
+          onLoad={this.loadMore}
+        />
+
+        <ToastContainer position="top-right" autoClose={2000} limit={3} />
       </div>
     );
   }
