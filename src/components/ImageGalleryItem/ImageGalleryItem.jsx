@@ -13,24 +13,17 @@ export class ImageGalleryItem extends Component {
     }));
   };
 
-  openModal = () => {
-    this.setState({ showModal: true });
-  };
-
-  closeModal = () => {
-    this.setState({ showModal: false });
-  };
-
   render() {
     return (
-      <li className={css.ImageGalleryItem} onClick={this.toggleModal}>
+      <li className={css.ImageGalleryItem}>
         <img
+          onClick={this.toggleModal}
           className={css.ImageGalleryItemImage}
           src={this.props.smallImg}
           alt=""
         />
         {this.state.showModal && (
-          <Modal onClose={this.closeModal} largeImg={this.props.largeImg} />
+          <Modal onClose={this.toggleModal} largeImg={this.props.largeImg} />
         )}
       </li>
     );

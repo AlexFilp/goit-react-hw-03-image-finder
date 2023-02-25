@@ -18,18 +18,18 @@ export class Modal extends Component {
     }
   };
 
-  //   handleBackdropClick = event => {
-  //     console.log(event.target);
-  //     console.log(event.currentTarget);
-  //     if (event.target === event.currentTarget) {
-  //       console.log('clicked overlay');
-  //       this.props.onClose();
-  //     }
-  //   };
+  handleBackdropClick = event => {
+    console.log(event.target);
+    console.log(event.currentTarget);
+    if (event.target === event.currentTarget) {
+      console.log('clicked overlay');
+      this.props.onClose();
+    }
+  };
 
   render() {
     return (
-      <div className={css.Overlay}>
+      <div className={css.Overlay} onClick={this.handleBackdropClick}>
         <div className={css.Modal}>
           <img src={this.props.largeImg} alt="largeImg" />
         </div>
