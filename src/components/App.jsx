@@ -18,7 +18,6 @@ export class App extends Component {
     this.setState(prevState => ({
       page: prevState.page + 1,
     }));
-    console.log(this.state.page);
   };
 
   render() {
